@@ -16,6 +16,15 @@
   position: absolute;
   object-fit: cover;
 }
+.img_logo {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  width: auto;
+  height: 750px;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
 
 footer {
   background-color: #111;
@@ -57,4 +66,7 @@ header {
   width: 100%;
   position: fixed;
   z-index: 999;
+}
+p {
+  margin: 2rem;
 }
