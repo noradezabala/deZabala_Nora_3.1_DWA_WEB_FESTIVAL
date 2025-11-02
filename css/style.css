@@ -1,9 +1,24 @@
 @font-face {
   font-family: "HeadingProWideTrial-Regular";
-  src: url("css/fonts/heading_pro_wide/HeadingProWideTrial-Regular.woff2")
+  src: url("fonts/heading_pro_wide/HeadingProWideTrial-Regular.woff2")
       format("woff2"),
-    url("css/fonts/heading_pro_wide/HeadingProWideTrial-Regular.woff")
+    url("fonts/heading_pro_wide/HeadingProWideTrial-Regular.woff")
       format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "HeadingProWideTrial-Heavy";
+  src: url("fonts/heading_pro_wide/HeadingProWideTrial-Heavy.woff2")
+      format("woff2"),
+    url("fonts/heading_pro_wide/HeadingProWideTrial-Heavy.woff") format("woff");
+  font-weight: bolder;
+  font-style: normal;
+}
+@font-face {
+  font-family: "TypeMachine";
+  src: url("fonts/Typemachine/TypeMachine.woff2") format("woff2"),
+    url("fonts/Typemachine/TypeMachine.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -12,34 +27,9 @@
   padding: 0;
   box-sizing: border-box;
 }
-
-.img_fondo {
-  display: flex;
-  height: 100vh;
-  position: relative;
-  max-width: 100%;
-  max-height: auto;
-}
-.img_fondo img {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  object-fit: cover;
-}
-.img_logo {
-  position: absolute;
-  top: 55%;
-  left: 50%;
-  max-height: 80vh;
-  max-width: 90vw;
-  transform: translate(-50%, -50%);
-  z-index: 1000;
-}
-footer {
-  background-color: #111;
-  color: white;
-  padding: 40px 20px;
-  text-align: center;
+a {
+  text-decoration: none;
+  color: inherit;
 }
 nav {
   width: 100%;
@@ -87,7 +77,8 @@ nav ul {
   left: 0;
   z-index: 1000;
   padding: 10px;
-  font-family: Arial, sans-serif;
+  font-family: "HeadingProWideTrial-Regular";
+  margin-top: 1.1rem;
 }
 
 .comprar_entradas a {
@@ -114,13 +105,114 @@ header {
   position: fixed;
   z-index: 999;
 }
-p {
-  margin: 2rem;
+.img_fondo {
+  display: flex;
+  height: 100vh;
+  position: relative;
+  max-width: 100%;
+  max-height: auto;
 }
-.about_festival {
-  font-size: 1.2 rem;
+.img_fondo img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  object-fit: cover;
+}
+.img_logo {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  max-height: 80vh;
+  max-width: 90vw;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
 }
 
+.about_festival {
+  font-family: "TypeMachine";
+  font-size: clamp(1rem, 1vw, 0.5rem);
+  line-height: 1.6;
+  margin: 2rem;
+}
+footer {
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+}
+.footer_contenido {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  gap: 2rem;
+}
+
+.footer_bloque1 {
+  text-align: left;
+  color: black;
+  font-size: 1rem;
+  font-family: "TypeMachine";
+  text-transform: uppercase;
+  line-height: 21.93px;
+  max-width: 395px;
+}
+.footer_bloque2 > p {
+  color: black;
+  font-size: 1.2rem;
+  font-family: "HeadingProWideTrial-Heavy";
+  font-weight: bolder;
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+.footer_bloque2 > ul {
+  color: black;
+  font-size: 1rem;
+  font-family: "TypeMachine";
+  text-transform: uppercase;
+  line-height: 21.93px;
+  text-align: left;
+}
+.footer_bloque2 > ul > a {
+  text-decoration: underline;
+}
+.footer_bloque3 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  max-width: 395px;
+}
+.footer_bloque3 > p {
+  color: black;
+  font-size: 20.3px;
+  font-family: "HeadingProWideTrial-Heavy";
+  font-weight: 900;
+  word-wrap: break-word;
+}
+.footer_bloque3 > ul {
+  margin-bottom: 1rem;
+  list-style: none;
+}
+.footer_bloque3 > ul > li {
+  align-self: stretch;
+  color: black;
+  font-size: 1rem;
+  font-family: "TypeMachine";
+  text-decoration: underline;
+  text-transform: uppercase;
+  line-height: 21.93px;
+}
+.footer_bloque3 > div {
+  color: white;
+  background-color: black;
+  padding: 0.3rem;
+  font-size: 1rem;
+  font-family: "TypeMachine";
+  text-transform: uppercase;
+}
 @media (max-width: 768px) {
   .img_fondo {
     height: 60vh;
@@ -154,6 +246,9 @@ p {
   .menu-show {
     right: 0;
   }
+}
+
+@media (max-width: 1164px) {
   .comprar_entradas {
     position: absolute;
     top: 70%;
@@ -168,7 +263,7 @@ p {
   }
 
   .comprar_entradas a {
-    font-size: 0.5rem;
+    font-size: 0.6rem;
     padding: 10px 20px;
     max-width: 80%;
     white-space: normal;
