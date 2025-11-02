@@ -45,8 +45,8 @@
     </main>
 
     <footer>
-      <div class="footer_contenido">
-        <div class="footer_logo">
+      <div class="footer_superior">
+        <div>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -87,14 +87,26 @@
           </ul>
         </div>
         <div class="footer_bloque3">
-          <p>NEWSLETTER:</p>
-          <ul>
-            <li>NOMBRE: Lorem Ipsum</li>
-            <li>E-MAIL: Lorem Ipsum</li>
-          </ul>
-          <div>ENVIAR</div>
+          <p style="font-family: HeadingProWideTrial-Heavy">NEWSLETTER:</p>
+          <form class="newsletter_formulario" action="#" method="POST">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required />
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required />
+
+            <button type="submit">ENVIAR</button>
+          </form>
+        </div>
+        <div class="mensaje-suscripcion"></div>
+      </div>
+      <div class="footer_inferior">
+        <div class="partner">
+          <p>PARTNER:</p>
+          <img src="svg/VollDamm.svg" alt="Descripción del SVG" />
         </div>
       </div>
     </footer>
+    <script src="js/script.js"></script>
   </body>
 </html>

@@ -13,3 +13,16 @@ burger.addEventListener("click", function () {
   burger.classList.toggle("fa-times");
   menu_opt.classList.toggle("menu-show");
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.querySelector(".newsletter_formulario");
+
+  if (form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const nombre = document.getElementById("nombre").value;
+      alert(`¡Gracias por suscribirte, ${nombre}!`);
+      form.reset();
+    });
+  }
+});

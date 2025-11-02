@@ -111,6 +111,8 @@ header {
   position: relative;
   max-width: 100%;
   max-height: auto;
+  border-bottom: 1px solid black;
+  padding-bottom: 3rem;
 }
 .img_fondo img {
   width: 100%;
@@ -139,8 +141,10 @@ footer {
   padding: 2rem;
   display: flex;
   justify-content: center;
+  border-top: 1px solid black;
+  padding-bottom: 2rem;
 }
-.footer_contenido {
+.footer_superior {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -157,7 +161,7 @@ footer {
   font-family: "TypeMachine";
   text-transform: uppercase;
   line-height: 21.93px;
-  max-width: 395px;
+  max-width: 300px;
 }
 .footer_bloque2 > p {
   color: black;
@@ -178,41 +182,45 @@ footer {
 .footer_bloque2 > ul > a {
   text-decoration: underline;
 }
-.footer_bloque3 {
+.newsletter_formulario {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 0.5rem;
+  gap: 0.3rem;
+  width: 100%;
   max-width: 395px;
 }
-.footer_bloque3 > p {
-  color: black;
-  font-size: 20.3px;
-  font-family: "HeadingProWideTrial-Heavy";
-  font-weight: 900;
-  word-wrap: break-word;
-}
-.footer_bloque3 > ul {
-  margin-bottom: 1rem;
-  list-style: none;
-}
-.footer_bloque3 > ul > li {
-  align-self: stretch;
-  color: black;
-  font-size: 1rem;
+
+.newsletter_formulario label {
   font-family: "TypeMachine";
-  text-decoration: underline;
+  font-size: 1rem;
   text-transform: uppercase;
-  line-height: 21.93px;
+  color: black;
 }
-.footer_bloque3 > div {
-  color: white;
-  background-color: black;
+
+.newsletter_formulario input {
   padding: 0.3rem;
-  font-size: 1rem;
   font-family: "TypeMachine";
+  font-size: 1rem;
   text-transform: uppercase;
 }
+
+.newsletter_formulario button {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 0.3rem;
+  font-family: "TypeMachine";
+  font-size: 1rem;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.mensaje-suscripcion {
+  margin-top: 1rem;
+  font-family: var(--fuente-principal);
+  font-size: 1rem;
+  color: var(--color-texto);
+}
+
 @media (max-width: 768px) {
   .img_fondo {
     height: 60vh;
