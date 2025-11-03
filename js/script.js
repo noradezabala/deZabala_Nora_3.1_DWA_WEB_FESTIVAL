@@ -1,11 +1,11 @@
-// Abrir y cerrar menú
-
+// Lógica del menú
 let burger = document.querySelector(".burger > i");
 
 console.log(burger);
 let menu_opt = document.querySelector(".menu");
 console.log(menu_opt);
 
+//Definición del evento:
 burger.addEventListener("click", function () {
   console.log("hola");
 
@@ -13,6 +13,18 @@ burger.addEventListener("click", function () {
   burger.classList.toggle("fa-times");
   menu_opt.classList.toggle("menu-show");
 });
+
+// Visibilidad del menú
+window.addEventListener("scroll", function () {
+  const nav = document.querySelector("nav");
+
+  if (window.scrollY > 100 && window.innerWidth > 768) {
+    nav.classList.add("nav-scrolled");
+  } else {
+    nav.classList.remove("nav-scrolled");
+  }
+});
+// Lógica del formulario de suscripción al newsletter
 
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.querySelector(".newsletter_formulario");
