@@ -96,6 +96,17 @@ nav.nav-scrolled a {
   font-size: 1.2em;
   display: none;
 }
+.logo_nav {
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+  height: 100%;
+}
+
+.logo_nav img {
+  height: 40px;
+  width: auto;
+}
 
 header {
   display: flex;
@@ -109,13 +120,26 @@ header {
 main > div {
   display: flex;
   justify-content: center;
-  margin: 4rem;
+  margin-top: 4rem;
 }
-.cartel_fstvlb {
+.cartel_wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 4rem;
+}
+.cartel_fstvl {
   width: 95vw;
   height: auto;
+  display: block;
 }
 
+.desktop {
+  display: block;
+}
+
+.mobile {
+  display: none;
+}
 footer {
   width: 100%;
   padding: 2rem;
@@ -227,6 +251,19 @@ footer {
 .partner > p {
   margin-bottom: 0.5rem;
 }
+@media (max-width: 1024px) {
+  .cartel_fstvl.mobile {
+    width: 90vw;
+  }
+
+  .desktop {
+    display: none;
+  }
+
+  .mobile {
+    display: block;
+  }
+}
 @media (max-width: 768px) {
   .burger {
     display: block;
@@ -263,7 +300,28 @@ footer {
     font-size: 1.5rem;
     color: white;
   }
+  .logo_nav {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 1002;
+    margin: 0.3rem;
+  }
 
+  .logo_nav img {
+    height: 25px;
+  }
+  .cartel_fstvl.mobile {
+    width: 90vw;
+  }
+
+  .desktop {
+    display: none;
+  }
+
+  .mobile {
+    display: block;
+  }
   .footer_superior > div,
   .footer_inferior > div {
     font-size: 0.8rem;
