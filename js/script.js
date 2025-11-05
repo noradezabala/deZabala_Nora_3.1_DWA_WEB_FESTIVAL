@@ -18,7 +18,7 @@ burger.addEventListener("click", function () {
 window.addEventListener("scroll", function () {
   const nav = document.querySelector("nav");
 
-  if (window.scrollY > 100 && window.innerWidth > 768) {
+  if (window.scrollY > 10 && window.innerWidth > 768) {
     nav.classList.add("nav-scrolled");
   } else {
     nav.classList.remove("nav-scrolled");
