@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Formulario reactivo: mostrar menú de selección
 document.addEventListener("DOMContentLoaded", function () {
-  const foodMenu = document.querySelector(".food_menu");
+  const foodMenu = document.querySelector(".formulario_entradas");
 
   const botonesCompra = document.querySelectorAll(
     ".entrada_boton button, .seleccionar_varias button"
@@ -57,7 +57,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Formulario reactivo: sumar/restar entradas y calcular total
 document.addEventListener("DOMContentLoaded", function () {
-  const inputs = document.querySelectorAll(".food_menu input[type='text']");
+  const inputs = document.querySelectorAll(
+    ".formulario_entradas input[type='text']"
+  );
   const totalDisplay = document.querySelector(".total_price");
   const buyButton = document.querySelector(".buy_food");
 
