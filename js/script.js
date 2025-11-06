@@ -57,3 +57,35 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const inputs = document.querySelectorAll(".food_menu input[type='number']");
+  const totalDisplay = document.querySelector(".total_price");
+  const buyButton = document.querySelector(".buy_food");
+
+  function calcularTotal() {
+    let total = 0;
+
+    inputs.forEach((input) => {
+      const cantidad = parseInt(input.value) || 0;
+      const precio = parseFloat(input.dataset.price) || 0;
+      total += cantidad * precio;
+    });
+
+    totalDisplay.textContent = total.toFixed(2) + " €";
+
+    if (total > 0) {
+      buyButton.classList.remove("disabled");
+      buyButton.disabled = false;
+    } else {
+      buyButton.classList.add("disabled");
+      buyButton.disabled = true;
+    }
+  }
+
+  inputs.forEach((input) => {
+    input.addEventListener("input", calcularTotal);
+  });
+
+  calcularTotal();
+});

@@ -296,6 +296,9 @@ nav.nav-scrolled a {
   color: white;
   transition: 0.3s;
 }
+.food_menu .total_price_cont {
+  font-family: "TypeMachine";
+}
 
 footer {
   width: 100%;
@@ -509,6 +512,41 @@ footer {
     padding: 0.6rem;
     width: 100%;
     margin-top: 2rem;
+  }
+  .food_menu {
+    padding: 1rem;
+    margin: 2rem auto;
+    width: 90%;
+  }
+
+  .food_menu form > div {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .food_menu label {
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .food_menu input[type="number"] {
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.4rem;
+  }
+
+  .food_menu .total_price_cont {
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 1rem;
+  }
+  .food_menu .total_price_cont {
+    font-family: "TypeMachine";
+  }
+  .food_menu .buy_food {
+    font-size: 1.2rem;
+    padding: 0.8rem;
+    width: 100%;
   }
 
   .footer_superior > div,
