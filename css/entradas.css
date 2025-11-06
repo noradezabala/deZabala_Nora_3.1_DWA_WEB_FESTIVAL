@@ -81,7 +81,7 @@ nav.nav-scrolled a {
 .menulink:hover a {
   opacity: 50%;
 }
-.burger {
+.titulo_formulario {
   cursor: pointer;
   font-size: 1.2em;
   display: none;
@@ -97,8 +97,9 @@ nav.nav-scrolled a {
 }
 
 .entradas {
-  padding: 6rem 2rem 4rem;
+  padding: 5rem 2rem 4rem;
   flex-wrap: wrap;
+  min-width: 632 px;
 }
 .entradas_wrapper {
   display: flex;
@@ -106,7 +107,7 @@ nav.nav-scrolled a {
   justify-content: center;
   align-items: stretch;
   gap: 2rem;
-  max-width: 1320px;
+
   margin: 0 auto;
 }
 .entrada_card {
@@ -114,9 +115,7 @@ nav.nav-scrolled a {
   flex-direction: column;
   justify-content: space-between;
   flex: 1 1 300px;
-  max-width: 428px;
   width: 100%;
-  min-height: 68.75rem;
   font-family: "HeadingProWideTrial-Regular";
   overflow: hidden;
 }
@@ -146,13 +145,12 @@ nav.nav-scrolled a {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 0, 3rem;
 }
-.entrada_header h2 {
-  font-size: 1.75rem;
-}
+
 .entrada_precio {
-  font-size: 1.5rem;
-  font-family: "TypeMachine", sans-serif;
+  font-size: 2rem;
+  font-family: "TypeMachine";
 }
 .entrada_lista h3 {
   font-size: 0.9rem;
@@ -200,15 +198,15 @@ nav.nav-scrolled a {
   cursor: pointer;
 }
 
-.entrada_boton button:hover,
-.seleccionar_varias button:hover {
+.entrada_boton:hover {
   opacity: 50%;
   scale: 1rem;
   transition: 0.3s;
 }
 .seleccionar_varias {
   color: black;
-  background-color: #6d5da5;
+  background-color: #ffffff;
+  border: 1px solid black;
   font-family: "HeadingProWideTrial-Regular";
   font-weight: 800;
   font-size: 1.5rem;
@@ -217,8 +215,14 @@ nav.nav-scrolled a {
   padding: 1rem;
   margin-top: 2rem;
 }
-
-.food_menu {
+.seleccionar_varias:hover {
+  scale: 1rem;
+  transition: 0.3s;
+  color: white;
+  background-color: black;
+  border: 1px solid white;
+}
+.formulario_entradas {
   display: none;
   background-color: white;
   border: 1px solid black;
@@ -228,13 +232,13 @@ nav.nav-scrolled a {
   font-family: "HeadingProWideTrial-Regular", sans-serif;
 }
 
-.food_menu.menu_visible {
+.formulario_entradas.menu_visible {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 
-.food_menu form > div {
+.formulario_entradas form > div {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -242,13 +246,13 @@ nav.nav-scrolled a {
   margin-bottom: 1.5rem;
 }
 
-.food_menu label {
+.formulario_entradas label {
   font-size: 1.2rem;
   color: black;
   font-family: "TypeMachine";
 }
 
-.food_menu .total_price_cont {
+.formulario_entradas .total_price_cont {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
@@ -256,26 +260,24 @@ nav.nav-scrolled a {
   margin-top: 2rem;
   font-family: "TypeMachine";
 }
-.food_menu .total_price_cont p {
+.formulario_entradas .total_price_cont p {
   font-size: 1, 5rem;
 }
-.food_menu .buy_food {
-  background-color: rgb(255, 255, 255);
-  color: rgb(0, 0, 0);
-  font-family: "HeadingProWideTrial-Regular";
-  font-weight: bold;
-  font-size: 1.4rem;
-  padding: 1rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  text-transform: uppercase;
-  margin-top: 1rem;
-}
-
-.food_menu .buy_food:hover {
+.formulario_entradas .buy_food {
   background-color: black;
   color: white;
+  font-family: "HeadingProWideTrial-Regular";
+  font-size: 1rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  border: 1px solid black;
+}
+
+.formulario_entradas .buy_food:hover {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
   transition: 0.3s;
 }
 
@@ -410,8 +412,8 @@ footer {
 
 @media (max-width: 1024px) {
   .logo_nav img {
-    width: 7vw;
-    max-width: 80px;
+    width: 8vw;
+    height: auto;
   }
   .entradas_wrapper {
     align-items: center;
@@ -422,10 +424,10 @@ footer {
   }
 
   .entrada_header h2 {
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
   .entrada_precio {
-    font-size: 1.3rem;
+    font-size: 0.9rem;
   }
   .entrada_lista h3 {
     font-size: 0.85rem;
@@ -434,18 +436,18 @@ footer {
     font-size: 0.75rem;
   }
   .entrada_boton {
-    font-size: 1.5rem;
+    font-size: 1rem;
     padding: 0.8rem;
   }
   .seleccionar_varias {
-    font-size: 1.3rem;
+    font-size: 1rem;
     padding: 0.8rem;
     width: 100%;
   }
 }
 
 @media (max-width: 768px) {
-  .burger {
+  .titulo_formulario {
     display: block;
   }
   nav li a {
@@ -488,8 +490,8 @@ footer {
   }
 
   .logo_nav img {
-    width: 9vw;
-    max-width: 85px;
+    width: 15vw;
+    height: auto;
   }
 
   .entrada_contenido {
@@ -501,11 +503,11 @@ footer {
   }
 
   .entrada_header h2 {
-    font-size: 1rem;
+    font-size: 0, 3rem;
   }
 
   .entrada_precio {
-    font-size: 0.8rem;
+    font-size: 0, 2rem;
   }
 
   .entrada_lista h3 {
@@ -517,47 +519,47 @@ footer {
   }
 
   .entrada_boton {
-    font-size: 1.3rem;
+    font-size: 1rem;
     padding: 0.6rem;
   }
 
   .seleccionar_varias {
-    font-size: 1.2rem;
+    font-size: 1rem;
     padding: 0.6rem;
-    width: 100%;
+    width: 80%;
     margin-top: 2rem;
   }
-  .food_menu {
+  .formulario_entradas {
     padding: 1rem;
     margin: 2rem auto;
     width: 90%;
   }
 
-  .food_menu form > div {
+  .formulario_entradas form > div {
     flex-direction: column;
     align-items: flex-start;
   }
 
-  .food_menu label {
+  .formulario_entradas label {
     font-size: 1rem;
     margin-bottom: 0.3rem;
   }
 
-  .food_menu input[type="number"] {
+  .formulario_entradas input[type="number"] {
     width: 100%;
     font-size: 1rem;
     padding: 0.4rem;
   }
 
-  .food_menu .total_price_cont {
+  .formulario_entradas .total_price_cont {
     flex-direction: column;
     align-items: flex-start;
     font-size: 0, 5rem;
   }
-  .food_menu .total_price_cont {
+  .formulario_entradas .total_price_cont {
     font-family: "TypeMachine";
   }
-  .food_menu .buy_food {
+  .formulario_entradas .buy_food {
     font-size: 1.2rem;
     padding: 0.8rem;
     width: 100%;
