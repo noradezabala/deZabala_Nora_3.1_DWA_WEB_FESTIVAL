@@ -40,6 +40,15 @@ a {
   text-decoration: none;
   color: inherit;
 }
+button {
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+}
 header {
   position: fixed;
   top: 0;
@@ -84,12 +93,17 @@ nav ul {
 }
 nav.nav-scrolled {
   background-color: var(--color-white);
+  color: var(--color-black);
   transition: background-color 0.3s ease;
   z-index: 999;
   border-bottom: 1px solid var(--color-black);
 }
+nav.nav-scrolled ul li a {
+  color: var(--color-black);
+}
 nav.nav-scrolled a {
   color: var(--color-black);
+  z-index: 1000;
 }
 .menulink {
   list-style: none;
@@ -162,7 +176,7 @@ header {
 }
 .about_festival {
   font-family: "TypeMachine";
-  font-size: clamp(0.8rem, 1.5vw, 1rem);
+  font-size: clamp(0.7rem, 1.5vw, 1rem);
   line-height: 1.6;
   margin: 2rem;
 }
@@ -186,27 +200,28 @@ header {
   text-align: center;
 }
 .modal_contenido p {
-  font-size: 1rem;
+  font-size: clamp(0.7rem, 1.5vw, 1rem);
   margin-bottom: 1rem;
 }
 .modal_botones {
   display: flex;
   justify-content: center;
   gap: 1rem;
+  border-radius: 2px;
 }
 .modal_botones button {
-  background-color: transparent;
-  color: var(--color-black);
-  border: 2px solid var(--color-black);
-  padding: 0.6rem 1.2rem;
-  font-size: 1rem;
-  cursor: pointer;
-  border-radius: 5px;
-  font-family: "TypeMachine";
-}
-.modal_botones button:hover {
   background-color: var(--color-black);
   color: var(--color-white);
+  border-radius: 2px;
+  padding: 0.4rem 0.8rem;
+  font-size: clamp(0.7rem, 1.5vw, 1rem);
+  cursor: pointer;
+  font-family: "TypeMachine";
+  border: 1px solid var(--color-black);
+}
+.modal_botones button:hover {
+  color: var(--color-black);
+  background-color: var(--color-white);
   transition: 0.3s;
 }
 footer {

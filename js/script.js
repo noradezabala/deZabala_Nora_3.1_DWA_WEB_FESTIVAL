@@ -1,19 +1,16 @@
 // Lógica del menú
-let burger = document.querySelector(".burger > i");
+document.addEventListener("DOMContentLoaded", function () {
+  const burger = document.querySelector(".burger > i");
+  const menu_opt = document.querySelector(".menu");
 
-console.log(burger);
-let menu_opt = document.querySelector(".menu");
-console.log(menu_opt);
-
-burger.addEventListener("click", function () {
-  console.log("hola");
-
-  burger.classList.toggle("fa-bars");
-  burger.classList.toggle("fa-times");
-  menu_opt.classList.toggle("menu-show");
+  burger.addEventListener("click", function () {
+    burger.classList.toggle("fa-bars");
+    burger.classList.toggle("fa-times");
+    menu_opt.classList.toggle("menu-show");
+  });
 });
 
-// Visibilidad del menú
+// Visibilidad del menú al hacer scroll
 window.addEventListener("scroll", function () {
   const nav = document.querySelector("nav");
 
@@ -23,8 +20,8 @@ window.addEventListener("scroll", function () {
     nav.classList.remove("nav-scrolled");
   }
 });
-// Formulario de suscripción al newsletter
 
+// Formulario de suscripción al newsletter
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.querySelector(".newsletter_formulario");
 
@@ -38,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-// Formulario reactivo
+// Formulario reactivo: mostrar menú de selección
 document.addEventListener("DOMContentLoaded", function () {
   const foodMenu = document.querySelector(".food_menu");
 
@@ -48,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   botonesCompra.forEach((boton) => {
     boton.addEventListener("click", function (e) {
-      e.preventDefault(); // evita que el botón provoque scroll o recarga
+      e.preventDefault();
       if (foodMenu) {
         foodMenu.classList.remove("menu_oculto");
         foodMenu.classList.add("menu_visible");
@@ -58,8 +55,9 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// Formulario reactivo: sumar/restar entradas y calcular total
 document.addEventListener("DOMContentLoaded", function () {
-  const inputs = document.querySelectorAll(".food_menu input[type='number']");
+  const inputs = document.querySelectorAll(".food_menu input[type='text']");
   const totalDisplay = document.querySelector(".total_price");
   const buyButton = document.querySelector(".buy_food");
 
@@ -83,12 +81,32 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  inputs.forEach((input) => {
-    input.addEventListener("input", calcularTotal);
+  document.querySelectorAll(".sumar").forEach((boton) => {
+    boton.addEventListener("click", function () {
+      const targetId = this.dataset.target;
+      const input = document.getElementById(targetId);
+      let valor = parseInt(input.value) || 0;
+      input.value = valor + 1;
+      calcularTotal();
+    });
+  });
+
+  document.querySelectorAll(".restar").forEach((boton) => {
+    boton.addEventListener("click", function () {
+      const targetId = this.dataset.target;
+      const input = document.getElementById(targetId);
+      let valor = parseInt(input.value) || 0;
+      if (valor > 0) {
+        input.value = valor - 1;
+        calcularTotal();
+      }
+    });
   });
 
   calcularTotal();
 });
+
+// Modal de cookies en index.html
 document.addEventListener("DOMContentLoaded", function () {
   if (
     window.location.pathname.endsWith("index.html") ||

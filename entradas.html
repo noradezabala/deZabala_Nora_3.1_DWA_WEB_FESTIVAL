@@ -183,35 +183,58 @@
               >SELECCIONE SUS ENTRADAS</label
             >
           </div>
-          <div>
+          <div class="entrada_selector">
             <label for="pizza">ENTRADA GENERAL - 80€</label>
-            <input
-              type="number"
-              class="pizza"
-              min="0"
-              value="0"
-              data-price="80"
-            />
+            <div class="contador">
+              <button type="button" class="restar" data-target="pizza">
+                –
+              </button>
+              <input
+                type="text"
+                id="pizza"
+                class="pizza"
+                value="0"
+                data-price="80"
+                readonly
+              />
+              <button type="button" class="sumar" data-target="pizza">+</button>
+            </div>
           </div>
-          <div>
+
+          <div class="entrada_selector">
             <label for="salad">ENTRADA PLUS - 100€</label>
-            <input
-              type="number"
-              class="salad"
-              min="0"
-              value="0"
-              data-price="100"
-            />
+            <div class="contador">
+              <button type="button" class="restar" data-target="salad">
+                –
+              </button>
+              <input
+                type="text"
+                id="salad"
+                class="salad"
+                value="0"
+                data-price="100"
+                readonly
+              />
+              <button type="button" class="sumar" data-target="salad">+</button>
+            </div>
           </div>
-          <div>
+
+          <div class="entrada_selector">
             <label for="drink">ENTRADA SUPERPLUS - 180€</label>
-            <input
-              type="number"
-              class="drink"
-              min="0"
-              value="0"
-              data-price="180"
-            />
+            <div class="contador">
+              <button type="button" class="restar" data-target="drink">
+                –
+              </button>
+              <input
+                type="text"
+                id="drink"
+                class="drink"
+                value="0"
+                data-price="180"
+                readonly
+              />
+              <button type="button" class="sumar" data-target="drink">+</button>
+            </div>
           </div>
 
           <div class="total_price_cont">
