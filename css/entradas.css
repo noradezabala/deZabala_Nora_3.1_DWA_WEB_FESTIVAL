@@ -22,96 +22,563 @@
   font-weight: normal;
   font-style: normal;
 }
-
-:root {
-  --color-white: #ffffff;
-  --color-black: #000000;
-  --color-accent: #6d5da5;
-  --color-white-transparent: rgba(255, 255, 255, 0);
-  --color-white-soft: rgba(255, 255, 255, 0.25);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
-/* A partir de aquí, todos los colores han sido reemplazados por variables */
-
+a {
+  text-decoration: none;
+  color: inherit;
+}
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 6rem;
+}
 nav {
-  color: var(--color-black);
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 20px 50px;
+  color: #000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 4rem;
 }
 nav li a {
-  color: var(--color-black);
+  font-family: "HeadingProWideTrial-Regular";
+  font-size: 1.2em;
+  font-weight: 500;
+  color: #000000;
 }
 nav.nav-scrolled {
-  background-color: var(--color-white);
-  border-bottom: 1px solid var(--color-black);
+  background-color: white;
+  border-bottom: 1px solid #000;
+  transition: background-color 0.3s ease;
 }
 nav.nav-scrolled a {
-  color: var(--color-black);
+  color: black;
 }
 .menulink {
-  color: var(--color-white);
+  list-style: none;
+  color: white;
 }
-.entrada_general,
-.entrada_plus,
-.entrada_boton_superplus {
-  background-color: var(--color-black);
-  color: var(--color-white);
+.menulink:hover a {
+  opacity: 50%;
+}
+.burger {
+  cursor: pointer;
+  font-size: 1.2em;
+  display: none;
+}
+.logo_nav {
+  margin-right: auto;
+  height: 100%;
+}
+.logo_nav img {
+  width: 4vw;
+  max-width: 70px;
+  height: auto;
+}
+
+.entradas {
+  padding: 6rem 2rem 4rem;
+  flex-wrap: wrap;
+}
+.entradas_wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 2rem;
+  max-width: 1320px;
+  margin: 0 auto;
+}
+.entrada_card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1 1 300px;
+  max-width: 428px;
+  width: 100%;
+  min-height: 68.75rem;
+  font-family: "HeadingProWideTrial-Regular";
+  overflow: hidden;
+}
+.entrada_general {
+  background-color: black;
+  color: white;
+}
+.entrada_plus {
+  background-color: black;
+  color: white;
 }
 .entrada_superplus {
-  background-color: var(--color-accent);
-  color: var(--color-black);
+  background-color: #6d5da5;
+  color: black;
+}
+.entrada_img {
+  width: 100%;
+  height: auto;
+}
+.entrada_contenido {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.entrada_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.entrada_header h2 {
+  font-size: 1.75rem;
+}
+.entrada_precio {
+  font-size: 1.5rem;
+  font-family: "TypeMachine", sans-serif;
+}
+.entrada_lista h3 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.entrada_lista ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.8rem;
+  font-family: "TypeMachine", sans-serif;
+  line-height: 1.6;
 }
 .entrada_boton {
-  background-color: var(--color-accent);
-  color: var(--color-black);
+  background-color: #6d5da5;
+  color: black;
+  font-size: 1.75rem;
+  font-weight: 800;
+  font-family: "HeadingProWideTrial-Regular", sans-serif;
+  text-align: center;
+  padding: 1rem;
+  cursor: pointer;
+  margin-top: auto;
+}
+.entrada_boton a:hover {
+  opacity: 50%;
+  font-size: 1.8rem;
+  transition: 0.3s;
+}
+.entrada_boton_superplus {
+  background-color: black;
+  color: white;
+}
+.entrada_boton button,
+.seleccionar_varias button {
+  all: unset;
+  display: block;
+  width: 100%;
+  height: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  text-align: center;
+  cursor: pointer;
+}
+
+.entrada_boton button:hover,
+.seleccionar_varias button:hover {
+  opacity: 50%;
+  font-size: 1.8rem;
+  transition: 0.3s;
 }
 .seleccionar_varias {
-  background-color: var(--color-accent);
-  color: var(--color-black);
+  color: black;
+  background-color: #6d5da5;
+  font-family: "HeadingProWideTrial-Regular";
+  font-weight: 800;
+  font-size: 1.5rem;
+  text-align: center;
+  width: 90%;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+.seleccionar_varias a:hover {
+  opacity: 50%;
+  font-size: 1.53rem;
+  transition: 0.3s;
+  cursor: pointer;
 }
 .food_menu {
-  background-color: var(--color-black);
+  display: none;
+  background-color: rgb(0, 0, 0);
+  padding: 2rem;
+  margin: 4rem auto;
+  max-width: 728px;
+  font-family: "HeadingProWideTrial-Regular", sans-serif;
 }
+
+.food_menu.menu_visible {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.food_menu form > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
 .food_menu label {
-  color: var(--color-white);
+  font-size: 1.2rem;
+  color: rgb(255, 255, 255);
+  font-family: "TypeMachine";
+  flex: 1;
 }
+
 .food_menu input[type="number"] {
-  border: 1px solid var(--color-accent);
-  color: var(--color-white);
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  width: 6rem;
+  border: 1px solid #6d5da5;
+  border-radius: 5px;
+  font-family: "TypeMachine";
+  color: rgb(255, 255, 255);
+  background-color: transparent;
 }
+
 .food_menu input[type="number"]:focus {
-  border-color: var(--color-black);
+  outline: none;
+  border-color: black;
+}
+
+.food_menu .total_price_cont {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;
+  font-family: "HeadingProWideTrial-Heavy";
+  color: #6d5da5;
+  margin-top: 2rem;
+}
+
+.food_menu .buy_food {
+  background-color: #6d5da5;
+  color: black;
+  font-family: "HeadingProWideTrial-Regular";
+  font-weight: bold;
+  font-size: 1.4rem;
+  padding: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+  margin-top: 1rem;
+}
+
+.food_menu .buy_food:hover {
+  background-color: black;
+  color: white;
+  transition: 0.3s;
 }
 .food_menu .total_price_cont {
-  color: var(--color-accent);
+  font-family: "TypeMachine";
 }
-.food_menu .buy_food {
-  background-color: var(--color-accent);
-  color: var(--color-black);
-}
-.food_menu .buy_food:hover {
-  background-color: var(--color-black);
-  color: var(--color-white);
-}
+
 footer {
-  border-top: 1px solid var(--color-black);
-  border-bottom: 1px solid var(--color-black);
+  width: 100%;
+  padding: 2rem;
 }
-.footer_direccion,
-.footer_contacto > p,
+.footer_superior_wrapper {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  width: 100%;
+}
+.footer_superior {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 3rem auto 0;
+  padding-bottom: 2rem;
+}
+.footer_superior > div {
+  flex: 1 1 250px;
+}
+.footer_direccion {
+  text-align: left;
+  color: black;
+  font-size: 1rem;
+  font-family: "TypeMachine";
+  text-transform: uppercase;
+  line-height: 21.93px;
+  max-width: 300px;
+}
+.footer_contacto > p {
+  color: black;
+  font-size: 1rem;
+  font-family: "HeadingProWideTrial-Heavy";
+  font-weight: bolder;
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
 .footer_contacto > ul {
-  color: var(--color-black);
+  color: black;
+  font-size: 1rem;
+  font-family: "TypeMachine";
+  line-height: 21.93px;
+  text-align: left;
 }
-.newsletter_formulario label {
-  color: var(--color-black);
+.footer_contacto > ul > li > a,
+.footer_contacto > ul > a {
+  text-decoration: underline;
+  opacity: 50%;
+}
+.footer_contacto > ul > li > a:hover,
+.footer_contacto > ul > a:hover {
+  opacity: 100%;
+}
+.newsletter_formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  max-width: 395px;
+  width: 100%;
+}
+.newsletter_formulario label,
+.newsletter_formulario input,
+.newsletter_formulario button {
+  font-family: "TypeMachine";
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+.newsletter_formulario input {
+  padding: 0.3rem;
 }
 .newsletter_formulario button {
-  background-color: var(--color-black);
-  color: var(--color-white);
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 0.3rem;
+  cursor: pointer;
 }
-.menu {
-  background: var(--color-black);
+.footer_inferior {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 3rem;
+  font-family: "TypeMachine";
 }
-.menu li a,
-.fa-times,
-.menulink {
-  color: var(--color-white);
+.partner > p {
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 1024px) {
+  .logo_nav img {
+    width: 7vw;
+    max-width: 80px;
+  }
+  .entradas_wrapper {
+    align-items: center;
+  }
+  .entrada_card {
+    width: 90%;
+    max-width: 50vw;
+  }
+
+  .entrada_header h2 {
+    font-size: 1.5rem;
+  }
+  .entrada_precio {
+    font-size: 1.3rem;
+  }
+  .entrada_lista h3 {
+    font-size: 0.85rem;
+  }
+  .entrada_lista ul {
+    font-size: 0.75rem;
+  }
+  .entrada_boton {
+    font-size: 1.5rem;
+    padding: 0.8rem;
+  }
+  .seleccionar_varias {
+    font-size: 1.3rem;
+    padding: 0.8rem;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .burger {
+    display: block;
+  }
+  nav li a {
+    color: white;
+  }
+  .menu {
+    margin: 0;
+    background: #000000;
+    position: fixed;
+    right: -100%;
+    top: 70px;
+    width: 100%;
+    height: calc(100% - 70px);
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0;
+    z-index: 1001;
+    scroll-behavior: sticky;
+  }
+
+  .menu.menu-show {
+    top: 0;
+    height: 100vh;
+    right: 0;
+  }
+
+  .menulink {
+    font-size: 1.2rem;
+    text-align: center;
+    color: white;
+  }
+
+  .fa-times {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1001;
+    font-size: 1.5rem;
+    color: white;
+  }
+
+  .logo_nav img {
+    width: 9vw;
+    max-width: 85px;
+  }
+
+  .entrada_contenido {
+    padding: 0.8rem;
+  }
+  .entrada_card {
+    min-height: unset;
+    height: auto;
+  }
+
+  .entrada_header h2 {
+    font-size: 1rem;
+  }
+
+  .entrada_precio {
+    font-size: 0.8rem;
+  }
+
+  .entrada_lista h3 {
+    font-size: 0.6rem;
+  }
+
+  .entrada_lista ul {
+    font-size: 0.5rem;
+  }
+
+  .entrada_boton {
+    font-size: 1.3rem;
+    padding: 0.6rem;
+  }
+
+  .seleccionar_varias {
+    font-size: 1.2rem;
+    padding: 0.6rem;
+    width: 100%;
+    margin-top: 2rem;
+  }
+  .food_menu {
+    padding: 1rem;
+    margin: 2rem auto;
+    width: 90%;
+  }
+
+  .food_menu form > div {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .food_menu label {
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .food_menu input[type="number"] {
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.4rem;
+  }
+
+  .food_menu .total_price_cont {
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 1rem;
+  }
+  .food_menu .total_price_cont {
+    font-family: "TypeMachine";
+  }
+  .food_menu .buy_food {
+    font-size: 1.2rem;
+    padding: 0.8rem;
+    width: 100%;
+  }
+
+  .footer_superior > div,
+  .footer_inferior > div {
+    font-size: 0.8rem;
+  }
+
+  .footer_direccion,
+  .footer_contacto > p,
+  .footer_contacto > ul,
+  .newsletter_formulario label,
+  .newsletter_formulario input,
+  .newsletter_formulario button {
+    font-size: 0.8rem;
+  }
+
+  .newsletter_formulario input,
+  .newsletter_formulario button {
+    padding: 0.8rem;
+  }
+
+  .newsletter_formulario button {
+    margin-top: 0.5rem;
+  }
+
+  .footer_inferior img {
+    width: 2.5rem !important;
+    margin: 0.5rem !important;
+  }
+
+  .logo_footer {
+    width: 4rem;
+    height: auto;
+  }
 }
