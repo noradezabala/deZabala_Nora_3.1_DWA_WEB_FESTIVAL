@@ -22,6 +22,15 @@
   font-weight: normal;
   font-style: normal;
 }
+
+:root {
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-accent: #6d5da5;
+  --color-white-transparent: rgba(255, 255, 255, 0);
+  --color-white-soft: rgba(255, 255, 255, 0.25);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -43,14 +52,14 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  color: #ffffff;
+  color: var(--color-white);
   position: fixed;
   top: 0;
   left: 0;
 }
 nav li a {
   text-decoration: none;
-  color: white;
+  color: var(--color-white);
   font-weight: 500;
   font-family: "HeadingProWideTrial-Regular";
   font-size: 1.2em;
@@ -60,7 +69,7 @@ nav {
   justify-content: flex-end;
   align-items: center;
   padding: 30px 40px;
-  color: white;
+  color: var(--color-white);
   z-index: 99;
   width: 100%;
   padding: 20px 50px;
@@ -74,14 +83,13 @@ nav ul {
   gap: 4rem;
 }
 nav.nav-scrolled {
-  background-color: white;
+  background-color: var(--color-white);
   transition: background-color 0.3s ease;
   z-index: 999;
-  border-bottom: #000000 1px solid;
+  border-bottom: 1px solid var(--color-black);
 }
-
 nav.nav-scrolled a {
-  color: black;
+  color: var(--color-black);
 }
 .menulink {
   list-style: none;
@@ -90,7 +98,6 @@ nav.nav-scrolled a {
 .menulink:hover a {
   opacity: 50%;
 }
-
 .burger {
   cursor: pointer;
   font-size: 1.2em;
@@ -106,18 +113,17 @@ nav.nav-scrolled a {
   text-align: center;
   width: 100%;
 }
-
 .comprar_entradas a {
   font-size: 1rem;
   font-family: "HeadingProWideTrial-Regular";
   padding: 10px 20px;
   max-width: 100%;
-  background-color: #ffffff00;
-  color: #ffffff;
-  border: 2px solid #ffffff;
+  background-color: var(--color-white-transparent);
+  color: var(--color-white);
+  border: 2px solid var(--color-white);
 }
 .comprar_entradas a:hover {
-  background-color: #ffffff3f;
+  background-color: var(--color-white-soft);
   transition: ease-in.3s;
   transition: ease-out.3s;
 }
@@ -136,7 +142,7 @@ header {
   position: relative;
   max-width: 100%;
   max-height: auto;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid var(--color-black);
   padding-bottom: 3rem;
 }
 .img_fondo img {
@@ -154,22 +160,64 @@ header {
   transform: translate(-50%, -50%);
   z-index: 800;
 }
-
 .about_festival {
   font-family: "TypeMachine";
   font-size: clamp(0.8rem, 1.5vw, 1rem);
   line-height: 1.6;
   margin: 2rem;
 }
+.modal_cookies {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--color-white);
+  border: 2px solid var(--color-black);
+  color: var(--color-black);
+  font-family: "TypeMachine";
+  padding: 1.5rem;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal_contenido {
+  max-width: 728px;
+  text-align: center;
+}
+.modal_contenido p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+.modal_botones {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.modal_botones button {
+  background-color: transparent;
+  color: var(--color-black);
+  border: 2px solid var(--color-black);
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  font-family: "TypeMachine";
+}
+.modal_botones button:hover {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  transition: 0.3s;
+}
 footer {
   width: 100%;
   padding: 2rem;
-  background-color: white;
+  background-color: var(--color-white);
 }
 .footer_superior_wrapper {
-  border-top: 1px solid black;
+  border-top: 1px solid var(--color-black);
   width: 100%;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid var(--color-black);
 }
 .footer_superior {
   display: flex;
@@ -186,10 +234,9 @@ footer {
 .footer_superior > div {
   flex: 1 1 250px;
 }
-
 .footer_direccion {
   text-align: left;
-  color: black;
+  color: var(--color-black);
   font-size: 1rem;
   font-family: "TypeMachine";
   text-transform: uppercase;
@@ -197,7 +244,7 @@ footer {
   max-width: 300px;
 }
 .footer_contacto > p {
-  color: black;
+  color: var(--color-black);
   font-size: 1rem;
   font-family: "HeadingProWideTrial-Heavy";
   font-weight: bolder;
@@ -205,7 +252,7 @@ footer {
   text-align: left;
 }
 .footer_contacto > ul {
-  color: black;
+  color: var(--color-black);
   font-size: 1rem;
   font-family: "TypeMachine";
   line-height: 21.93px;
@@ -232,24 +279,21 @@ footer {
   width: 100%;
   max-width: 395px;
 }
-
 .newsletter_formulario label {
   font-family: "TypeMachine";
   font-size: 1rem;
   text-transform: uppercase;
-  color: black;
+  color: var(--color-black);
 }
-
 .newsletter_formulario input {
   padding: 0.3rem;
   font-family: "TypeMachine";
   font-size: 1rem;
   text-transform: uppercase;
 }
-
 .newsletter_formulario button {
-  background-color: black;
-  color: white;
+  background-color: var(--color-black);
+  color: var(--color-white);
   border: none;
   padding: 0.3rem;
   font-family: "TypeMachine";
@@ -272,6 +316,7 @@ footer {
 .partner > p {
   margin-bottom: 0.5rem;
 }
+
 @media (max-width: 768px) {
   .img_fondo {
     height: 60vh;
@@ -281,12 +326,14 @@ footer {
     top: 50%;
     max-height: 40vh;
   }
+
   .burger {
     display: block;
   }
+
   .menu {
     margin: 0;
-    background: #000000;
+    background: var(--color-black);
     position: fixed;
     right: -100%;
     top: 70px;
@@ -298,6 +345,7 @@ footer {
     z-index: 1001;
     scroll-behavior: sticky;
   }
+
   .menu.menu-show {
     top: 0;
     height: 100vh;
@@ -308,14 +356,16 @@ footer {
     font-size: 1.2rem;
     text-align: center;
   }
+
   .fa-times {
     position: absolute;
     top: 1rem;
     right: 1rem;
     z-index: 1001;
     font-size: 1.5rem;
-    color: white;
+    color: var(--color-white);
   }
+
   .comprar_entradas {
     position: absolute;
     top: 75%;
@@ -332,6 +382,7 @@ footer {
     padding: 5px 10px;
     max-width: 30%;
   }
+
   .footer_superior > div,
   .footer_inferior > div {
     font-size: 0.8rem;
@@ -350,6 +401,7 @@ footer {
   .newsletter_formulario button {
     padding: 0.8rem;
   }
+
   .newsletter_formulario button {
     margin-top: 0.5rem;
   }
@@ -358,6 +410,7 @@ footer {
     width: 2.5rem !important;
     margin: 0.5rem !important;
   }
+
   .logo_footer {
     width: 4rem;
     height: auto;

@@ -89,3 +89,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
   calcularTotal();
 });
+document.addEventListener("DOMContentLoaded", function () {
+  if (
+    window.location.pathname.endsWith("index.html") ||
+    window.location.pathname === "/" ||
+    window.location.pathname === "/index"
+  ) {
+    const modal = document.querySelector(".modal_cookies");
+    const aceptar = document.querySelector(".aceptar_cookies");
+    const rechazar = document.querySelector(".rechazar_cookies");
+
+    function cerrarModal() {
+      modal.style.display = "none";
+    }
+
+    aceptar.addEventListener("click", cerrarModal);
+    rechazar.addEventListener("click", cerrarModal);
+  }
+});
