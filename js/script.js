@@ -37,3 +37,23 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+// Formulario reactivo
+document.addEventListener("DOMContentLoaded", function () {
+  const foodMenu = document.querySelector(".food_menu");
+
+  const botonesCompra = document.querySelectorAll(
+    ".entrada_boton button, .seleccionar_varias button"
+  );
+
+  botonesCompra.forEach((boton) => {
+    boton.addEventListener("click", function (e) {
+      e.preventDefault(); // evita que el botón provoque scroll o recarga
+      if (foodMenu) {
+        foodMenu.classList.remove("menu_oculto");
+        foodMenu.classList.add("menu_visible");
+        foodMenu.scrollIntoView({ behavior: "smooth" });
+      }
+    });
+  });
+});

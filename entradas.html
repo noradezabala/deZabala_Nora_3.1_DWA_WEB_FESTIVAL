@@ -56,7 +56,7 @@
                 </ul>
               </div>
             </div>
-            <p class="entrada_boton"><a href="#">COMPRAR</a></p>
+            <p class="entrada_boton"><button type="button">COMPRAR</button></p>
           </div>
 
           <div class="entrada_card entrada_plus">
@@ -102,7 +102,7 @@
                 </ul>
               </div>
             </div>
-            <p class="entrada_boton"><a href="#">COMPRAR</a></p>
+            <p class="entrada_boton"><button type="button">COMPRAR</button></p>
           </div>
 
           <div class="entrada_card entrada_superplus">
@@ -166,13 +166,60 @@
               </div>
             </div>
             <p class="entrada_boton entrada_boton_superplus">
-              <a href="#">COMPRAR</a>
+              <button type="button">COMPRAR</button>
             </p>
           </div>
           <p class="seleccionar_varias">
-            <a href="#">SELECCIONAR VARIAS</a>
+            <button type="button">SELECCIONAR VARIAS</button>
           </p>
         </div>
+      </section>
+      <section class="food_menu menu_oculto">
+        <form>
+          <div>
+            <label
+              for="burger"
+              style="font-family: HeadingProWideTrial-Regular; font-weight: 800"
+              >SELECCIONE SUS ENTRADAS</label
+            >
+          </div>
+          <div>
+            <label for="pizza">ENTRADA GENERAL - 80€</label>
+            <input
+              type="number"
+              class="pizza"
+              min="0"
+              value="0"
+              data-price="80"
+            />
+          </div>
+          <div>
+            <label for="salad">ENTRADA PLUS - 100€</label>
+            <input
+              type="number"
+              class="salad"
+              min="0"
+              value="0"
+              data-price="100"
+            />
+          </div>
+          <div>
+            <label for="drink">ENTRADA SUPERPLUS - 180€</label>
+            <input
+              type="number"
+              class="drink"
+              min="0"
+              value="0"
+              data-price="180"
+            />
+          </div>
+
+          <div class="total_price_cont">
+            <p>Total price:</p>
+            <p class="total_price"></p>
+          </div>
+          <input type="submit" value="COMPRAR" class="buy_food disabled" />
+        </form>
       </section>
     </main>
 
@@ -180,7 +227,11 @@
       <div class="footer_superior_wrapper">
         <div class="footer_superior">
           <div>
-            <img src="svg/FSTVLB-1.svg" class="logo_footer" />
+            <img
+              src="svg/FSTVLB-1.svg"
+              class="logo_footer"
+              alt="logo festvl b"
+            />
           </div>
           <div class="footer_direccion">
             <p>PARC DEL FÒRUM C. de la Pau, 12 08930 Barcelona</p>
@@ -192,13 +243,20 @@
               <li><a href="#">hola@fstblb.com</a></li>
               <li><a href="#">press@fstblb.com</a></li>
               <li><a href="#">ZONA DE PRENSA</a></li>
-              FOLLOW US:
-              <a href="https://www.instagram.com/fstvl_b/" target="_blank">
-                IG </a
-              ><a href="https://x.com/fstvl_b/" target="_blank"> TW </a
-              ><a href="https://www.facebook.com/fstvlb/" target="_blank">
-                FB
-              </a>
+              <li style="list-style: none">FOLLOW US:</li>
+              <li style="list-style: none">
+                <a href="https://www.instagram.com/fstvl_b/" target="_blank">
+                  IG
+                </a>
+              </li>
+              <li style="list-style: none">
+                <a href="https://x.com/fstvl_b/" target="_blank"> TW </a>
+              </li>
+              <li style="list-style: none">
+                <a href="https://www.facebook.com/fstvlb/" target="_blank">
+                  FB
+                </a>
+              </li>
             </ul>
           </div>
           <div class="footer_newsletter">
@@ -218,27 +276,36 @@
       <div class="footer_inferior">
         <div class="partner">
           <p>PARTNER:</p>
-          <img src="svg/VollDamm.svg" style="width: 5rem; height: auto" />
+          <img
+            alt="VollDamm"
+            src="svg/VollDamm.svg"
+            style="width: 5rem; height: auto"
+          />
         </div>
         <div class="patrocina_colabora">
           <p>PATROCINA Y COLABORA:</p>
           <img
+            alt="Adidas"
             src="svg/Adidas2.svg"
             style="width: 3rem; height: auto; margin: 1rem"
           />
           <img
+            alt="JagerBlack"
             src="svg/JagerBlack.svg"
             style="width: 3rem; height: auto; margin: 1rem"
           />
           <img
+            alt="JackDaniels"
             src="svg/JackDaniels2.svg"
             style="width: 3rem; height: auto; margin: 1rem"
           />
           <img
+            alt="FritzKola2"
             src="svg/FritzKola2.svg"
             style="width: 3rem; height: auto; margin: 1rem"
           />
           <img
+            alt="Lorenz"
             src="svg/Lorenz-1.svg"
             style="width: 3rem; height: auto; margin: 1rem"
           />
@@ -246,10 +313,12 @@
         <div class="media">
           <p>MEDIA:</p>
           <img
+            alt="R3"
             src="svg/R3.svg"
             style="width: 3rem; height: auto; margin: 1rem"
           />
           <img
+            alt="iCat"
             src="svg/iCat.svg"
             style="width: 2rem; height: auto; margin: 1rem"
           />
@@ -257,14 +326,17 @@
         <div class="soporte">
           <p>CON EL SOPORTE DE:</p>
           <img
+            alt="Ajuntament"
             src="svg/Ajuntament.svg"
             style="width: 3rem; height: auto; margin: 1rem"
           />
           <img
+            alt="ICEC"
             src="svg/ICEC.svg"
             style="width: 6rem; height: auto; margin: 1rem"
           />
           <img
+            alt="INAEM"
             src="svg/INAEM-2.svg"
             style="width: 6rem; height: auto; margin: 1rem"
           />

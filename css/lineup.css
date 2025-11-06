@@ -50,7 +50,7 @@ nav {
 }
 nav li a {
   text-decoration: none;
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   font-weight: 500;
   font-family: "HeadingProWideTrial-Regular";
   font-size: 1.2em;
@@ -138,6 +138,18 @@ main > div {
 
 .mobile {
   display: none;
+}
+.menu_oculto {
+  display: none;
+}
+
+.menu_visible {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  border: 1px solid #3498db;
+  margin-top: 2rem;
 }
 footer {
   width: 100%;
@@ -271,6 +283,9 @@ footer {
 @media (max-width: 768px) {
   .burger {
     display: block;
+  }
+  nav li a {
+    color: white;
   }
   .menu {
     margin: 0;

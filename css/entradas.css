@@ -64,7 +64,7 @@ nav li a {
   font-family: "HeadingProWideTrial-Regular";
   font-size: 1.2em;
   font-weight: 500;
-  color: #ffffff;
+  color: #000000;
 }
 nav.nav-scrolled {
   background-color: white;
@@ -187,6 +187,25 @@ nav.nav-scrolled a {
   background-color: black;
   color: white;
 }
+.entrada_boton button,
+.seleccionar_varias button {
+  all: unset;
+  display: block;
+  width: 100%;
+  height: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  text-align: center;
+  cursor: pointer;
+}
+
+.entrada_boton button:hover,
+.seleccionar_varias button:hover {
+  opacity: 50%;
+  font-size: 1.8rem;
+  transition: 0.3s;
+}
 .seleccionar_varias {
   color: black;
   background-color: #6d5da5;
@@ -204,11 +223,83 @@ nav.nav-scrolled a {
   transition: 0.3s;
   cursor: pointer;
 }
+.food_menu {
+  display: none;
+  background-color: rgb(0, 0, 0);
+  padding: 2rem;
+  margin: 4rem auto;
+  max-width: 728px;
+  font-family: "HeadingProWideTrial-Regular", sans-serif;
+}
+
+.food_menu.menu_visible {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.food_menu form > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.food_menu label {
+  font-size: 1.2rem;
+  color: rgb(255, 255, 255);
+  font-family: "TypeMachine";
+  flex: 1;
+}
+
+.food_menu input[type="number"] {
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  width: 6rem;
+  border: 1px solid #6d5da5;
+  border-radius: 5px;
+  font-family: "TypeMachine";
+  color: rgb(255, 255, 255);
+  background-color: transparent;
+}
+
+.food_menu input[type="number"]:focus {
+  outline: none;
+  border-color: black;
+}
+
+.food_menu .total_price_cont {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;
+  font-family: "HeadingProWideTrial-Heavy";
+  color: #6d5da5;
+  margin-top: 2rem;
+}
+
+.food_menu .buy_food {
+  background-color: #6d5da5;
+  color: black;
+  font-family: "HeadingProWideTrial-Regular";
+  font-weight: bold;
+  font-size: 1.4rem;
+  padding: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+  margin-top: 1rem;
+}
+
+.food_menu .buy_food:hover {
+  background-color: black;
+  color: white;
+  transition: 0.3s;
+}
 
 footer {
   width: 100%;
   padding: 2rem;
-  background-color: white;
 }
 .footer_superior_wrapper {
   border-top: 1px solid black;
@@ -340,7 +431,9 @@ footer {
   .burger {
     display: block;
   }
-
+  nav li a {
+    color: white;
+  }
   .menu {
     margin: 0;
     background: #000000;
