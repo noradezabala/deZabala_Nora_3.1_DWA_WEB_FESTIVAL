@@ -387,6 +387,52 @@ nav.nav-scrolled a {
 .oculto {
   display: none;
 }
+.modal_newsletter {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+
+.modal_contenido_newsletter {
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  padding: 2rem;
+  font-family: "TypeMachine";
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+}
+
+.modal_contenido_newsletter p {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.modal_contenido_newsletter button {
+  padding: 0.5rem 1rem;
+  font-family: "HeadingProWideTrial-Regular";
+  cursor: pointer;
+  border: 1px solid var(--color-texto);
+  background-color: var(--color-texto);
+  color: var(--color-fondo);
+  transition: 0.3s;
+}
+
+.modal_contenido_newsletter button:hover {
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+}
+
+.oculto {
+  display: none;
+}
 footer {
   width: 100%;
   padding: 2rem;
