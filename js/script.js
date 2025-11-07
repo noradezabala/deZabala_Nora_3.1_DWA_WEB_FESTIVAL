@@ -39,34 +39,43 @@ document.addEventListener("DOMContentLoaded", function () {
   const nav = document.querySelector("nav");
 
   window.addEventListener("scroll", function () {
-    if (window.scrollY > 10) {
-      nav.classList.add("nav-scrolled");
-    } else {
-      nav.classList.remove("nav-scrolled");
+    if (nav) {
+      if (window.scrollY > 10) {
+        nav.classList.add("nav-scrolled");
+      } else {
+        nav.classList.remove("nav-scrolled");
+      }
     }
   });
 
   // Ventana modal de cookies
-  const modal = document.querySelector(".modal_cookies");
-  const aceptar = document.querySelector(".aceptar_cookies");
-  const rechazar = document.querySelector(".rechazar_cookies");
+  const modalCookies = document.querySelector(".modal_cookies");
+  const aceptarCookies = document.querySelector(".aceptar_cookies");
+  const rechazarCookies = document.querySelector(".rechazar_cookies");
 
-  function cerrarModal() {
-    if (modal) modal.style.display = "none";
+  function cerrarModalCookies() {
+    if (modalCookies) modalCookies.style.display = "none";
   }
 
-  if (aceptar) aceptar.addEventListener("click", cerrarModal);
-  if (rechazar) rechazar.addEventListener("click", cerrarModal);
+  if (aceptarCookies)
+    aceptarCookies.addEventListener("click", cerrarModalCookies);
+  if (rechazarCookies)
+    rechazarCookies.addEventListener("click", cerrarModalCookies);
 
   // Formulario de suscripcion a la newsletter
-  const formNewsletter = document.querySelector(".newsletter_formulario");
+  const newsletterForm = document.querySelector(".newsletter_formulario");
+  const modalNewsletter = document.getElementById("modal_newsletter");
+  const cerrarNewsletterBtn = document.getElementById("cerrar_newsletter");
 
-  if (formNewsletter) {
-    formNewsletter.addEventListener("submit", function (e) {
+  if (newsletterForm && modalNewsletter && cerrarNewsletterBtn) {
+    newsletterForm.addEventListener("submit", function (e) {
       e.preventDefault();
-      const nombre = document.getElementById("nombre").value;
-      alert(`¡Gracias por suscribirte, ${nombre}!`);
-      formNewsletter.reset();
+      modalNewsletter.classList.remove("oculto");
+      newsletterForm.reset();
+    });
+
+    cerrarNewsletterBtn.addEventListener("click", function () {
+      modalNewsletter.classList.add("oculto");
     });
   }
 
@@ -103,14 +112,16 @@ document.addEventListener("DOMContentLoaded", function () {
       total += cantidad * precio;
     });
 
-    totalDisplay.textContent = total.toFixed(2) + " €";
+    if (totalDisplay) totalDisplay.textContent = total.toFixed(2) + " €";
 
-    if (total > 0) {
-      buyButton.classList.remove("disabled");
-      buyButton.disabled = false;
-    } else {
-      buyButton.classList.add("disabled");
-      buyButton.disabled = true;
+    if (buyButton) {
+      if (total > 0) {
+        buyButton.classList.remove("disabled");
+        buyButton.disabled = false;
+      } else {
+        buyButton.classList.add("disabled");
+        buyButton.disabled = true;
+      }
     }
   }
 
@@ -118,9 +129,11 @@ document.addEventListener("DOMContentLoaded", function () {
     boton.addEventListener("click", function () {
       const targetId = this.dataset.target;
       const input = document.getElementById(targetId);
-      let valor = parseInt(input.value) || 0;
-      input.value = valor + 1;
-      calcularTotal();
+      if (input) {
+        let valor = parseInt(input.value) || 0;
+        input.value = valor + 1;
+        calcularTotal();
+      }
     });
   });
 
@@ -128,13 +141,36 @@ document.addEventListener("DOMContentLoaded", function () {
     boton.addEventListener("click", function () {
       const targetId = this.dataset.target;
       const input = document.getElementById(targetId);
-      let valor = parseInt(input.value) || 0;
-      if (valor > 0) {
-        input.value = valor - 1;
-        calcularTotal();
+      if (input) {
+        let valor = parseInt(input.value) || 0;
+        if (valor > 0) {
+          input.value = valor - 1;
+          calcularTotal();
+        }
       }
     });
   });
 
   calcularTotal();
+
+  // Ventana modal continuar con el pago
+  const modalPago = document.getElementById("modal_pago");
+  const aceptarPago = document.getElementById("aceptar_pago");
+  const cancelarPago = document.getElementById("cancelar_pago");
+
+  if (buyButton && modalPago && aceptarPago && cancelarPago) {
+    buyButton.addEventListener("click", function (e) {
+      e.preventDefault();
+      modalPago.classList.remove("oculto");
+    });
+
+    cancelarPago.addEventListener("click", function () {
+      modalPago.classList.add("oculto");
+    });
+
+    aceptarPago.addEventListener("click", function () {
+      // aquí puedes redirigir realmente al checkout si lo deseas
+      modalPago.classList.add("oculto");
+    });
+  }
 });
