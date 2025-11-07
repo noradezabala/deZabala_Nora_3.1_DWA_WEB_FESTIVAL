@@ -22,10 +22,30 @@
   font-weight: normal;
   font-style: normal;
 }
+:root {
+  --color-fondo: #ffffff;
+  --color-texto: #000000;
+  --color-acento: #6d5da5;
+}
+body.modo-oscuro {
+  --color-fondo: #010101;
+  --color-texto: #ffffff;
+  --color-acento: #6d5da5;
+}
+body.modo-oscuro .footer_inferior img,
+body.modo-oscuro .footer_superior img {
+  filter: invert(1);
+}
+body.modo-oscuro nav img {
+  filter: invert(1);
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+body {
+  background-color: var(--color-fondo);
 }
 a {
   text-decoration: none;
@@ -48,7 +68,7 @@ nav {
   justify-content: flex-end;
   align-items: center;
   padding: 20px 50px;
-  color: #000;
+  color: var(--color-texto);
   position: fixed;
   top: 0;
   left: 0;
@@ -64,20 +84,24 @@ nav li a {
   font-family: "HeadingProWideTrial-Regular";
   font-size: 1.2em;
   font-weight: 500;
-  color: #000000;
+  color: var(--color-texto);
+}
+.icono_modo_oscuro img {
+  width: 1.5rem;
+  max-width: 100%;
 }
 nav.nav-scrolled {
-  background-color: white;
-  color: black;
-  border-bottom: 1px solid #000;
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  border-bottom: 1px solid var(--color-texto);
   transition: background-color 0.3s ease;
 }
 nav.nav-scrolled a {
-  color: black;
+  color: var(--color-texto);
 }
 .menulink {
   list-style: none;
-  color: white;
+  color: var(--color-fondo);
 }
 .menulink:hover a {
   opacity: 50%;
@@ -120,17 +144,16 @@ nav.nav-scrolled a {
   font-family: "HeadingProWideTrial-Regular";
   overflow: hidden;
 }
-.entrada_general {
-  background-color: black;
-  color: white;
-}
+.entrada_general,
 .entrada_plus {
-  background-color: black;
-  color: white;
+  background-color: #000000;
+  color: #ffffff;
+  border: 1px solid var(--color-texto);
 }
+
 .entrada_superplus {
-  background-color: #6d5da5;
-  color: black;
+  background-color: var(--color-acento);
+  color: var(--color-texto);
 }
 .entrada_img {
   width: 100%;
@@ -167,8 +190,8 @@ nav.nav-scrolled a {
   line-height: 1.6;
 }
 .entrada_boton {
-  background-color: #6d5da5;
-  color: black;
+  background-color: var(--color-acento);
+  color: var(--color-texto);
   font-size: 1.75rem;
   font-weight: 800;
   font-family: "HeadingProWideTrial-Regular", sans-serif;
@@ -183,8 +206,9 @@ nav.nav-scrolled a {
   transition: 0.3s;
 }
 .entrada_boton_superplus {
-  background-color: black;
-  color: white;
+  background-color: #000000;
+  color: #ffffff;
+  border: 1px solid var(--color-texto);
 }
 .entrada_boton button,
 .seleccionar_varias button {
@@ -205,9 +229,9 @@ nav.nav-scrolled a {
   transition: 0.3s;
 }
 .seleccionar_varias {
-  color: black;
-  background-color: #ffffff;
-  border: 1px solid black;
+  color: var(--color-texto);
+  background-color: var(--color-fondo);
+  border: 1px solid var(--color-texto);
   font-family: "HeadingProWideTrial-Regular";
   font-weight: 800;
   font-size: 1.5rem;
@@ -219,14 +243,14 @@ nav.nav-scrolled a {
 .seleccionar_varias:hover {
   scale: 1rem;
   transition: 0.3s;
-  color: white;
-  background-color: black;
-  border: 1px solid white;
+  color: var(--color-fondo);
+  background-color: var(--color-texto);
+  border: 1px solid var(--color-fondo);
 }
 .formulario_entradas {
   display: none;
-  background-color: white;
-  border: 1px solid black;
+  background-color: var(--color-fondo);
+  border: 1px solid var(--color-texto);
   padding: 2rem;
   margin: 4rem auto;
   max-width: 728px;
@@ -249,7 +273,7 @@ nav.nav-scrolled a {
 
 .formulario_entradas label {
   font-size: 1.2rem;
-  color: black;
+  color: var(--color-texto);
   font-family: "TypeMachine";
 }
 
@@ -257,7 +281,7 @@ nav.nav-scrolled a {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
-  color: #000000;
+  color: var(--color-texto);
   margin-top: 2rem;
   font-family: "TypeMachine";
 }
@@ -265,20 +289,20 @@ nav.nav-scrolled a {
   font-size: 1, 5rem;
 }
 .formulario_entradas .buy_food {
-  background-color: black;
-  color: white;
+  background-color: var(--color-texto);
+  color: var(--color-fondo);
   font-family: "HeadingProWideTrial-Regular";
   font-size: 1rem;
   padding: 0.5rem;
   cursor: pointer;
   text-transform: uppercase;
-  border: 1px solid black;
+  border: 1px solid var(--color-texto);
 }
 
 .formulario_entradas .buy_food:hover {
-  background-color: white;
-  color: black;
-  border: 1px solid black;
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  border: 1px solid var(--color-texto);
   transition: 0.3s;
 }
 
@@ -300,15 +324,15 @@ nav.nav-scrolled a {
   text-align: center;
   font-size: 1.2rem;
   font-family: "TypeMachine";
-  border: 1px solid #000000;
+  border: 1px solid var(--color-texto);
   background-color: transparent;
-  color: rgb(0, 0, 0);
+  color: var(--color-texto);
   padding: 0.5rem;
 }
 
 .contador button {
-  background-color: #000000;
-  color: rgb(255, 255, 255);
+  background-color: var(--color-texto);
+  color: var(--color-fondo);
   border: none;
   font-size: 1.5rem;
   font-family: "HeadingProWideTrial-Regular";
@@ -322,8 +346,8 @@ footer {
   padding: 2rem;
 }
 .footer_superior_wrapper {
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
+  border-top: 1px solid var(--color-texto);
+  border-bottom: 1px solid var(--color-texto);
   width: 100%;
 }
 .footer_superior {
@@ -341,7 +365,7 @@ footer {
 }
 .footer_direccion {
   text-align: left;
-  color: black;
+  color: var(--color-texto);
   font-size: 1rem;
   font-family: "TypeMachine";
   text-transform: uppercase;
@@ -349,7 +373,7 @@ footer {
   max-width: 300px;
 }
 .footer_contacto > p {
-  color: black;
+  color: var(--color-texto);
   font-size: 1rem;
   font-family: "HeadingProWideTrial-Heavy";
   font-weight: bolder;
@@ -357,7 +381,7 @@ footer {
   text-align: left;
 }
 .footer_contacto > ul {
-  color: black;
+  color: var(--color-texto);
   font-size: 1rem;
   font-family: "TypeMachine";
   line-height: 21.93px;
@@ -379,6 +403,11 @@ footer {
   max-width: 395px;
   width: 100%;
 }
+.footer_newsletter p {
+  color: var(--color-texto);
+  font-family: "HeadingProWideTrial-Heavy";
+}
+
 .newsletter_formulario label,
 .newsletter_formulario input,
 .newsletter_formulario button {
@@ -390,12 +419,17 @@ footer {
   padding: 0.3rem;
 }
 .newsletter_formulario button {
-  background-color: black;
-  color: white;
+  background-color: #000000;
+  color: #ffffff;
+  border: 1px solid #ffffff;
   border: none;
   padding: 0.3rem;
   cursor: pointer;
 }
+.newsletter_formulario label {
+  color: var(--color-texto);
+}
+
 .footer_inferior {
   display: flex;
   flex-wrap: wrap;
@@ -407,8 +441,15 @@ footer {
   padding-top: 3rem;
   font-family: "TypeMachine";
 }
+.partner > p,
+.patrocina_colabora > p,
+.media > p,
+.soporte > p {
+  color: var(--color-texto);
+  font-size: 1rem;
+}
 .partner > p {
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 @media (max-width: 1024px) {
@@ -452,11 +493,15 @@ footer {
     display: block;
   }
   nav li a {
-    color: white;
+    color: var(--color-texto);
   }
+  .icono_modo_oscuro img {
+    width: 2rem;
+  }
+
   .menu {
     margin: 0;
-    background: #000000;
+    background: var(--color-fondo);
     position: fixed;
     right: -100%;
     top: 70px;
@@ -478,16 +523,16 @@ footer {
   .menulink {
     font-size: 1.2rem;
     text-align: center;
-    color: white;
+    color: var(--color-fondo);
   }
 
   .fa-times {
     position: absolute;
-    top: 1rem;
-    right: 1rem;
+    top: 2rem;
+    right: 2, 5rem;
     z-index: 1001;
     font-size: 1.5rem;
-    color: white;
+    color: var(--color-texto);
   }
 
   .logo_nav img {

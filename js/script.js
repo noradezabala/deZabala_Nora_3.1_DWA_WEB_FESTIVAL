@@ -1,44 +1,77 @@
-// Lógica del menú
 document.addEventListener("DOMContentLoaded", function () {
+  // Cambiar modo
+  const btnSwitchMode = document.querySelector(".icono_modo_oscuro");
+  const body = document.querySelector("body");
+  const icono = document.querySelector(".icono_modo_oscuro img");
+
+  const iconoClaro = "svg/icono_modo_claro.svg";
+  const iconoOscuro = "svg/icono_modo_oscuro.svg";
+
+  if (btnSwitchMode && icono) {
+    btnSwitchMode.addEventListener("click", function () {
+      const isDark = body.classList.contains("modo-oscuro");
+
+      if (isDark) {
+        body.classList.remove("modo-oscuro");
+        body.classList.add("modo-claro");
+        icono.src = iconoOscuro;
+      } else {
+        body.classList.remove("modo-claro");
+        body.classList.add("modo-oscuro");
+        icono.src = iconoClaro;
+      }
+    });
+  }
+
+  // Menú hamburguesa
   const burger = document.querySelector(".burger > i");
-  const menu_opt = document.querySelector(".menu");
+  const menu = document.querySelector(".menu");
 
-  burger.addEventListener("click", function () {
-    burger.classList.toggle("fa-bars");
-    burger.classList.toggle("fa-times");
-    menu_opt.classList.toggle("menu-show");
-  });
-});
+  if (burger && menu) {
+    burger.addEventListener("click", function () {
+      burger.classList.toggle("fa-bars");
+      burger.classList.toggle("fa-times");
+      menu.classList.toggle("menu-show");
+    });
+  }
 
-// Visibilidad del menú al hacer scroll
-window.addEventListener("scroll", function () {
+  // Visibilidad del menú al hacer scroll
   const nav = document.querySelector("nav");
 
-  if (window.scrollY > 10 && window.innerWidth) {
-    nav.classList.add("nav-scrolled");
-  } else {
-    nav.classList.remove("nav-scrolled");
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > 10) {
+      nav.classList.add("nav-scrolled");
+    } else {
+      nav.classList.remove("nav-scrolled");
+    }
+  });
+
+  // Ventana modal de cookies
+  const modal = document.querySelector(".modal_cookies");
+  const aceptar = document.querySelector(".aceptar_cookies");
+  const rechazar = document.querySelector(".rechazar_cookies");
+
+  function cerrarModal() {
+    if (modal) modal.style.display = "none";
   }
-});
 
-// Formulario de suscripción al newsletter
-document.addEventListener("DOMContentLoaded", function () {
-  const form = document.querySelector(".newsletter_formulario");
+  if (aceptar) aceptar.addEventListener("click", cerrarModal);
+  if (rechazar) rechazar.addEventListener("click", cerrarModal);
 
-  if (form) {
-    form.addEventListener("submit", function (e) {
+  // Formulario de suscripcion a la newsletter
+  const formNewsletter = document.querySelector(".newsletter_formulario");
+
+  if (formNewsletter) {
+    formNewsletter.addEventListener("submit", function (e) {
       e.preventDefault();
       const nombre = document.getElementById("nombre").value;
       alert(`¡Gracias por suscribirte, ${nombre}!`);
-      form.reset();
+      formNewsletter.reset();
     });
   }
-});
 
-// Formulario reactivo: mostrar menú de selección
-document.addEventListener("DOMContentLoaded", function () {
+  // Mostrar formulario de compra de entradas
   const foodMenu = document.querySelector(".formulario_entradas");
-
   const botonesCompra = document.querySelectorAll(
     ".entrada_boton button, .seleccionar_varias button"
   );
@@ -53,10 +86,8 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
-});
 
-// Formulario reactivo: sumar/restar entradas y calcular total
-document.addEventListener("DOMContentLoaded", function () {
+  // Funcion de sumar o restar entradas y calcular total
   const inputs = document.querySelectorAll(
     ".formulario_entradas input[type='text']"
   );
@@ -106,24 +137,4 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   calcularTotal();
-});
-
-// Modal de cookies en index.html
-document.addEventListener("DOMContentLoaded", function () {
-  if (
-    window.location.pathname.endsWith("index.html") ||
-    window.location.pathname === "/" ||
-    window.location.pathname === "/index"
-  ) {
-    const modal = document.querySelector(".modal_cookies");
-    const aceptar = document.querySelector(".aceptar_cookies");
-    const rechazar = document.querySelector(".rechazar_cookies");
-
-    function cerrarModal() {
-      modal.style.display = "none";
-    }
-
-    aceptar.addEventListener("click", cerrarModal);
-    rechazar.addEventListener("click", cerrarModal);
-  }
 });

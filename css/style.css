@@ -24,11 +24,21 @@
 }
 
 :root {
-  --color-white: #ffffff;
-  --color-black: #000000;
-  --color-accent: #6d5da5;
-  --color-white-transparent: rgba(255, 255, 255, 0);
-  --color-white-soft: rgba(255, 255, 255, 0.25);
+  --color-fondo: #ffffff;
+  --color-texto: #000000;
+  --color-acento: #6d5da5;
+}
+body.modo-oscuro {
+  --color-fondo: #010101;
+  --color-texto: #ffffff;
+  --color-acento: #6d5da5;
+}
+body.modo-oscuro .footer_inferior img,
+body.modo-oscuro .footer_superior img {
+  filter: invert(1);
+}
+body.modo-oscuro nav.nav-scrolled img {
+  filter: invert(1);
 }
 
 * {
@@ -36,17 +46,11 @@
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  background-color: var(--color-fondo);
+}
 a {
   text-decoration: none;
-  color: inherit;
-}
-button {
-  background: none;
-  border: none;
-  box-shadow: none;
-  padding: 0;
-  margin: 0;
-  font: inherit;
   color: inherit;
 }
 header {
@@ -54,60 +58,56 @@ header {
   top: 0;
   width: 100%;
   z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 6rem;
 }
 nav {
   width: 100%;
   height: 70px;
   display: flex;
+  justify-content: flex-end;
   align-items: center;
-  justify-content: space-around;
-  color: var(--color-white);
+  padding: 20px 50px;
+  color: #ffffff;
   position: fixed;
   top: 0;
   left: 0;
-}
-nav li a {
-  text-decoration: none;
-  color: var(--color-white);
-  font-weight: 500;
-  font-family: "HeadingProWideTrial-Regular";
-  font-size: 1.2em;
-}
-nav {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 30px 40px;
-  color: var(--color-white);
   z-index: 99;
-  width: 100%;
-  padding: 20px 50px;
 }
 nav ul {
   display: flex;
   justify-content: center;
-  padding: 0;
-  margin: 0;
   list-style: none;
   gap: 4rem;
 }
-nav.nav-scrolled {
-  background-color: var(--color-white);
-  color: var(--color-black);
-  transition: background-color 0.3s ease;
-  z-index: 999;
-  border-bottom: 1px solid var(--color-black);
+nav li a {
+  font-family: "HeadingProWideTrial-Regular";
+  font-size: 1.2em;
+  font-weight: 500;
+  color: #ffffff;
 }
-nav.nav-scrolled ul li a {
-  color: var(--color-black);
+.icono_modo_oscuro img {
+  width: 1.5rem;
+  max-width: 100%;
+  filter: invert(1);
+}
+nav.nav-scrolled {
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  border-bottom: 1px solid var(--color-texto);
+  transition: background-color 0.3s ease;
+}
+nav.nav-scrolled img {
+  filter: invert(0);
 }
 nav.nav-scrolled a {
-  color: var(--color-black);
-  z-index: 1000;
+  color: var(--color-texto);
 }
 .menulink {
   list-style: none;
-  margin: 0;
+  color: var(--color-fondo);
 }
 .menulink:hover a {
   opacity: 50%;
@@ -117,6 +117,7 @@ nav.nav-scrolled a {
   font-size: 1.2em;
   display: none;
 }
+
 .comprar_entradas {
   position: absolute;
   top: 85%;
@@ -132,12 +133,12 @@ nav.nav-scrolled a {
   font-family: "HeadingProWideTrial-Regular";
   padding: 10px 20px;
   max-width: 100%;
-  background-color: var(--color-white-transparent);
-  color: var(--color-white);
-  border: 2px solid var(--color-white);
+  background-color: #ffffff00;
+  color: #ffffff;
+  border: 2px solid #ffffff;
 }
 .comprar_entradas a:hover {
-  background-color: var(--color-white-soft);
+  background-color: #ffffff77;
   transition: ease-in.3s;
   transition: ease-out.3s;
 }
@@ -156,7 +157,7 @@ header {
   position: relative;
   max-width: 100%;
   max-height: auto;
-  border-bottom: 1px solid var(--color-black);
+  border-bottom: 1px solid var(--color-texto);
   padding-bottom: 3rem;
 }
 .img_fondo img {
@@ -176,6 +177,7 @@ header {
 }
 .about_festival {
   font-family: "TypeMachine";
+  color: var(--color-texto);
   font-size: clamp(0.7rem, 1.5vw, 1rem);
   line-height: 1.6;
   margin: 2rem;
@@ -185,9 +187,9 @@ header {
   bottom: 0;
   left: 0;
   width: 100vw;
-  background-color: var(--color-white);
-  border-top: 2px solid var(--color-black);
-  color: var(--color-black);
+  background-color: var(--color-fondo);
+  border-top: 2px solid var(--color-texto);
+  color: var(--color-texto);
   font-family: "TypeMachine";
   padding: 1.5rem;
   z-index: 1000;
@@ -210,40 +212,37 @@ header {
   border-radius: 2px;
 }
 .modal_botones button {
-  background-color: var(--color-black);
-  color: var(--color-white);
+  background-color: var(--color-texto);
+  color: var(--color-fondo);
   border-radius: 2px;
   padding: 0.4rem 0.8rem;
   font-size: clamp(0.7rem, 1.5vw, 1rem);
   cursor: pointer;
   font-family: "TypeMachine";
-  border: 1px solid var(--color-black);
+  border: 1px solid var(--color-texto);
 }
 .modal_botones button:hover {
-  color: var(--color-black);
-  background-color: var(--color-white);
+  color: var(--color-texto);
+  background-color: var(--color-fondo);
   transition: 0.3s;
 }
 footer {
   width: 100%;
   padding: 2rem;
-  background-color: var(--color-white);
 }
 .footer_superior_wrapper {
-  border-top: 1px solid var(--color-black);
+  border-top: 1px solid var(--color-texto);
+  border-bottom: 1px solid var(--color-texto);
   width: 100%;
-  border-bottom: 1px solid var(--color-black);
 }
 .footer_superior {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
-  flex-wrap: wrap;
-  width: 100%;
   gap: 2rem;
   max-width: 1200px;
-  margin: 0 auto;
-  margin-top: 3rem;
+  margin: 3rem auto 0;
   padding-bottom: 2rem;
 }
 .footer_superior > div {
@@ -251,7 +250,7 @@ footer {
 }
 .footer_direccion {
   text-align: left;
-  color: var(--color-black);
+  color: var(--color-texto);
   font-size: 1rem;
   font-family: "TypeMachine";
   text-transform: uppercase;
@@ -259,7 +258,7 @@ footer {
   max-width: 300px;
 }
 .footer_contacto > p {
-  color: var(--color-black);
+  color: var(--color-texto);
   font-size: 1rem;
   font-family: "HeadingProWideTrial-Heavy";
   font-weight: bolder;
@@ -267,23 +266,18 @@ footer {
   text-align: left;
 }
 .footer_contacto > ul {
-  color: var(--color-black);
+  color: var(--color-texto);
   font-size: 1rem;
   font-family: "TypeMachine";
   line-height: 21.93px;
   text-align: left;
 }
-.footer_contacto > ul > li > a {
-  text-decoration: underline;
-  opacity: 50%;
-}
-.footer_contacto > ul > li > a:hover {
-  opacity: 100%;
-}
+.footer_contacto > ul > li > a,
 .footer_contacto > ul > a {
   text-decoration: underline;
   opacity: 50%;
 }
+.footer_contacto > ul > li > a:hover,
 .footer_contacto > ul > a:hover {
   opacity: 100%;
 }
@@ -291,45 +285,56 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
-  width: 100%;
   max-width: 395px;
+  width: 100%;
 }
-.newsletter_formulario label {
+.footer_newsletter p {
+  color: var(--color-texto);
+  font-family: "HeadingProWideTrial-Heavy";
+}
+
+.newsletter_formulario label,
+.newsletter_formulario input,
+.newsletter_formulario button {
   font-family: "TypeMachine";
   font-size: 1rem;
   text-transform: uppercase;
-  color: var(--color-black);
 }
 .newsletter_formulario input {
   padding: 0.3rem;
-  font-family: "TypeMachine";
-  font-size: 1rem;
-  text-transform: uppercase;
 }
 .newsletter_formulario button {
-  background-color: var(--color-black);
-  color: var(--color-white);
+  background-color: #000000;
+  color: #ffffff;
+  border: 1px solid #ffffff;
   border: none;
   padding: 0.3rem;
-  font-family: "TypeMachine";
-  font-size: 1rem;
-  text-transform: uppercase;
   cursor: pointer;
 }
+.newsletter_formulario label {
+  color: var(--color-texto);
+}
+
 .footer_inferior {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
-  flex-wrap: wrap;
-  max-width: 1200px;
-  width: 100%;
-  padding-top: 3rem;
-  margin: 0 auto;
   gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 3rem;
   font-family: "TypeMachine";
 }
+.partner > p,
+.patrocina_colabora > p,
+.media > p,
+.soporte > p {
+  color: var(--color-texto);
+  font-size: 1rem;
+}
 .partner > p {
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 @media (max-width: 768px) {
@@ -345,10 +350,16 @@ footer {
   .burger {
     display: block;
   }
+  nav li a {
+    color: var(--color-texto);
+  }
+  .icono_modo_oscuro img {
+    width: 2rem;
+  }
 
   .menu {
     margin: 0;
-    background: var(--color-black);
+    background: var(--color-fondo);
     position: fixed;
     right: -100%;
     top: 70px;
@@ -366,19 +377,19 @@ footer {
     height: 100vh;
     right: 0;
   }
-
   .menulink {
     font-size: 1.2rem;
     text-align: center;
+    color: var(--color-fondo);
   }
 
   .fa-times {
     position: absolute;
-    top: 1rem;
-    right: 1rem;
+    top: 2rem;
+    right: 2, 5rem;
     z-index: 1001;
     font-size: 1.5rem;
-    color: var(--color-white);
+    color: var(--color-texto);
   }
 
   .comprar_entradas {
