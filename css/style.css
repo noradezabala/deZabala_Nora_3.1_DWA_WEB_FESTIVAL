@@ -40,6 +40,9 @@ body.modo-oscuro .footer_superior img {
 body.modo-oscuro nav.nav-scrolled img {
   filter: invert(1);
 }
+body.modo-oscuro nav img {
+  filter: invert(1);
+}
 
 * {
   margin: 0;
@@ -91,7 +94,6 @@ nav li a {
 .icono_modo_oscuro img {
   width: 1.5rem;
   max-width: 100%;
-  filter: invert(1);
 }
 nav.nav-scrolled {
   background-color: var(--color-fondo);
@@ -160,8 +162,8 @@ header {
   border-bottom: 1px solid var(--color-texto);
   padding-bottom: 3rem;
 }
-.img_fondo img {
-  width: 100%;
+.img_fondo video {
+  width: 100vw;
   height: 100%;
   position: absolute;
   object-fit: cover;
@@ -336,12 +338,23 @@ footer {
 .partner > p {
   margin-bottom: 1rem;
 }
-
+@media (max-width 1024px) {
+  .img_fondo {
+    height: 60vh;
+  }
+  .img_fondo video {
+    width: 100vw;
+    height: 100%;
+  }
+}
 @media (max-width: 768px) {
   .img_fondo {
     height: 60vh;
   }
-
+  .img_fondo video {
+    width: 100vw;
+    height: 100%;
+  }
   .img_logo {
     top: 50%;
     max-height: 40vh;
